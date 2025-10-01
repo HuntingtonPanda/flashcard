@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+
 import './App.css'
 
 type flashcard = {
@@ -62,10 +63,20 @@ const flashcards: flashcard[] = [
   }
 ]
 
-function App() {
-  //const [count, setCount] = useState(0)
-  //const flashcardDict = {};
+function randomIndex(max: number, exclude: number) {
+if (max <= 1) return 0;
+let i = Math.floor(Math.random() * max);
+if (i === exclude) i = (i + 1) % max;
+return i;
+}
 
+function App() {
+  const [count, setCount] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleFlip = () => {
+    setIsFlipped((f) => !f);
+  }
 
   return (
     <>
@@ -73,14 +84,18 @@ function App() {
         <title>Flashcards for Bruins!</title>
         <h1>Flashcard for Bruins</h1>
         <h2>This is UCLA fun facts</h2>
+        <p className="badge">Total cards: {flashcards.length}</p>
       </header>
 
       <body>
-        {flashcards.map((flashcard, index) => (
+        {
+          flashcards[0].question
+        }
+        {/* {flashcards.map((flashcard, index) => (
           <div className="card" key={index}>
             {flashcard.question && <p><strong>Question:</strong> {flashcard.question}</p>}
           </div>
-        ))}
+        ))} */}
       </body>
 
     </>
