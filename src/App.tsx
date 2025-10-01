@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+//import reactLogo from './assets/react.svg'
+//import viteLogo from '/vite.svg'
 
 import './App.css'
 
@@ -91,7 +91,7 @@ function App() {
         <p className="badge">Total cards: {flashcards.length}</p>
       </header>
 
-      <body>
+      <main className="container">
         {
           <FlashcardView 
             card={flashcards[count]}
@@ -110,7 +110,7 @@ function App() {
             {flashcard.question && <p><strong>Question:</strong> {flashcard.question}</p>}
           </div>
         ))} */}
-      </body>
+      </main>
 
     </>
   )
