@@ -77,6 +77,10 @@ function App() {
   const handleFlip = () => {
     setIsFlipped((f) => !f);
   }
+  const handleNext = () => {
+    setCount((i) => randomIndex(flashcards.length, i));
+    setIsFlipped(false);
+  };
 
   return (
     <>
@@ -89,8 +93,18 @@ function App() {
 
       <body>
         {
-          flashcards[0].question
+          <FlashcardView 
+            card={flashcards[count]}
+            flipped={isFlipped}
+            onFlip={handleFlip}
+          />
         }
+        <div>
+          <button onClick={handleFlip}>
+            {isFlipped ? "Show Question" : "Show Answer"}
+          </button>
+          <button onClick={handleNext}>Next Random</button>
+        </div>
         {/* {flashcards.map((flashcard, index) => (
           <div className="card" key={index}>
             {flashcard.question && <p><strong>Question:</strong> {flashcard.question}</p>}
@@ -99,6 +113,31 @@ function App() {
       </body>
 
     </>
+  )
+}
+
+function FlashcardView({
+  card,
+  flipped,
+  onFlip,
+}: {
+  card: flashcard;
+  flipped: boolean;
+  onFlip: () => void;
+}) {
+  return (
+    <div className={`card ${flipped ? "is-flipped" : ""}`} onClick={onFlip}>
+      <div className="card-inner">
+        <div className="card-face card-front">
+          <h3>Question</h3>
+          <p>{card.question}</p>
+        </div>
+        <div className="card-face card-back">
+          <h3>Answer</h3>
+          <p>{card.answer}</p>
+        </div>
+      </div>
+    </div>
   )
 }
 
