@@ -1,73 +1,69 @@
-# React + TypeScript + Vite
+# Web Development Project 2 - *Flashcards*
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Submitted by: **Huntington Co**
 
-Currently, two official plugins are available:
+This web app: **insert description**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Time spent: **11** hours spent in total
 
-## React Compiler
+## Required Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The following **required** functionality is completed:
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [ ] **The app displays the title of the card set, a short description, and the total number of cards**
+  - [ X ] Title of card set is displayed 
+  - [ X ] A short description of the card set is displayed 
+  - [ X ] A list of card pairs is created
+  - [ X ] The total number of cards in the set is displayed 
+  - [ X ] Card set is represented as a list of card pairs (an array of dictionaries where each dictionary contains the question and answer is perfectly fine)
+- [ X ] **A single card at a time is displayed**
+  - [ X ] Only one half of the information pair is displayed at a time
+- [ X ] **Clicking on the card flips the card over, showing the corresponding component of the information pair**
+  - [ X ] Clicking on a card flips it over, showing the back with corresponding information 
+  - [ X ] Clicking on a flipped card again flips it back, showing the front
+- [ X ] **Clicking on the next button displays a random new card**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+The following **optional** features are implemented:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- [ ] Cards contain images in addition to or in place of text
+  - [ ] Some or all cards have images in place of or in addition to text
+- [ ] Cards have different visual styles such as color based on their category
+  - Example categories you can use:
+    - Difficulty: Easy/medium/hard
+    - Subject: Biology/Chemistry/Physics/Earth science
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The following **additional** features are implemented:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+* [ ] List anything else that you added to improve the site's functionality!
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Video Walkthrough
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Here's a walkthrough of implemented required features:
+
+![alt text](Web102Project2.gif)
+
+<img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+<!-- Replace this with whatever GIF tool you used! -->
+GIF created with ScreenToGif
+
+## Notes
+
+Describe any challenges encountered while building the app.
+
+## License
+
+    Copyright [2025] [Huntington Co]
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
